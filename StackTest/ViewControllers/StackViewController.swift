@@ -30,6 +30,14 @@ func secondFunction() {
     print("breakpoint-2를 여기에 설정하세요.")
 }
 
+func examineStructCopy() {
+    let original = StackObject(value1: 100, value2: 101)
+    let copied = original // 여기서 값 복사가 일어납니다!
+
+    print("--- Struct 복사 동작 확인 ---")
+    print("breakpoint-copy를 여기에 설정하세요.")
+}
+
 
 class StackViewController: UIViewController {
 
@@ -54,7 +62,9 @@ class StackViewController: UIViewController {
             titleLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
         ])
         
-        firstFunction()
+//        firstFunction()
+        
+        examineStructCopy()
         
         print("breakpoint-3를 여기에 설정하세요.")
     }
