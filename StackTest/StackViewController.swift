@@ -33,11 +33,30 @@ func secondFunction() {
 
 class StackViewController: UIViewController {
 
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "스택 메모리 확인용 뷰"
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .white
+        
+        self.view.addSubview(titleLabel)
+        
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            titleLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        ])
+        
         firstFunction()
+        
+        print("breakpoint-3를 여기에 설정하세요.")
     }
-    
 }
 
