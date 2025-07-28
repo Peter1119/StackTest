@@ -28,9 +28,18 @@ func examineHeap() {
     print("breakpoint를 여기에 설정하세요.")
 }
 
+func examineClassCopy() {
+    let original = HeapObject(name: "Original")
+    let copied = original // 여기서 참조(주소) 복사가 일어납니다!
+
+    print("\n--- Class 복사 동작 확인 ---")
+    print("breakpoint-class-copy를 여기에 설정하세요.")
+}
+
 class HeapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        examineHeap()
+//        examineHeap()
+        examineClassCopy()
     }
 }
