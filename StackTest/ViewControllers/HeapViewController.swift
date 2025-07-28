@@ -7,9 +7,30 @@
 
 import UIKit
 
+class HeapObject {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+        print("HeapObject: \(self.name) at: \(Unmanaged.passUnretained(self).toOpaque())")
+    }
+}
+
+func examineHeap() {
+    // 1️⃣ 첫 번째 힙 객체 생성
+    let heapObject1 = HeapObject(name: "First")
+    
+    // 2️⃣ 두 번째 힙 객체 생성
+    let heapObject2 = HeapObject(name: "Second")
+    
+    print("\n--- 힙 객체 생성 완료 ---")
+    print("heapObject1, heapObject2의 주소를 확인하세요.")
+    print("breakpoint를 여기에 설정하세요.")
+}
+
 class HeapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        examineHeap()
     }
 }
