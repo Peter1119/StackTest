@@ -39,7 +39,7 @@ func examineClassCopy() {
 class HeapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-//        examineHeap()
-        examineClassCopy()
+        examineHeap()
+//        examineClassCopy()
     }
 }
